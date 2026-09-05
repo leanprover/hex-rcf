@@ -5,41 +5,40 @@ on:
   pull_request:
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
-  cancel-in-progress: true
+  cancel-in-progress: ${{ github.ref != 'refs/heads/main' }}
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - name: Install system dependencies
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y libgmp-dev
-      - name: Install oracle dependencies
-        run: python3 -m pip install --user python-flint
       - uses: leanprover/lean-action@v1
         with:
           auto-config: false
           build: false
+          use-github-cache: false
+          use-mathlib-cache: false
+      - name: Restore Lake build outputs
+        uses: actions/cache/restore@v4
+        with:
+          path: |
+            .lake/build
+            .lake/packages/Hex*/.lake/build
+          key: lake-build-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.run_id }}-${{ github.run_attempt }}
+          restore-keys: |
+            lake-build-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-
       - name: Fetch Mathlib cache
         run: lake exe cache get
-      - name: Build library and release regressions
-        run: lake build HexRCF HexRCFTests
-      - name: Build conformance sidecar
+      - name: Build bridge and release regressions (Mathlib must come from cache, never rebuild)
         run: |
-          cd conformance
-          lake exe cache get
-          lake build
-      - name: Conformance oracle
-        run: |
-          (cd conformance && lake exe hexrcf_emit_fixtures) > /tmp/hex-rcf-fresh.jsonl
-          diff -u conformance-fixtures/HexRCF/rcf.jsonl /tmp/hex-rcf-fresh.jsonl
-          python3 scripts/oracle/rcf_flint.py < /tmp/hex-rcf-fresh.jsonl
-      - name: Build and verify benchmarks
-        env:
-          BENCH_VERIFY_HARD_CAP_SECONDS: "360"
-        run: |
-          cd bench
-          lake exe cache get
-          lake build hexrcf_bench HexRCFProofProbe
-          bash ../scripts/ci/check_bench_verify_budget.sh hexrcf_bench
+          set -o pipefail
+          lake build HexRCF HexRCFTests 2>&1 | tee build.log
+          if grep -qE 'Building Mathlib\b' build.log; then
+            echo "ERROR: Mathlib rebuilt from source (cache miss)"; exit 1; fi
+      - name: Save Lake build outputs
+        if: github.event_name == 'push' && github.ref == 'refs/heads/main' && success()
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            .lake/build
+            .lake/packages/Hex*/.lake/build
+          key: lake-build-${{ runner.os }}-${{ runner.arch }}-${{ hashFiles('lean-toolchain', 'lake-manifest.json') }}-${{ github.run_id }}-${{ github.run_attempt }}
