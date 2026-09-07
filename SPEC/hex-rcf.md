@@ -17,7 +17,7 @@ the body is false. For a false existential there is no single
 counterexample witness; the diagnostic instead reports that every
 relevant cell was checked and found false. Operational totality of the
 compiled builder follows from the squarefree carrier and
-`isolate?_isSome`, together with the structurally fuel-bounded
+`isolateRealRoots?_isSome`, together with the structurally fuel-bounded
 separation pass, from
 [hex-real-roots-mathlib](../../HexRealRootsMathlib/SPEC/hex-real-roots-mathlib.md).
 It is not exposed
@@ -192,7 +192,7 @@ proved equivalences.
    lemma for `Q = P*R` with `R ∣ Q'`. Since `Q` is the atom product,
    these are exactly the union of the atom root sets.
 
-   Run `Hex.isolate? P`; the compiled builder knows this succeeds from
+   Run `Hex.ZPoly.isolateRealRoots? P`; the compiled builder knows this succeeds from
    the squarefreeness theorem. If there are no nonconstant atoms, do
    not construct a carrier: the decomposition is the single cell `ℝ`
    and the sign matrix is the already-folded constant formula.
@@ -414,7 +414,7 @@ constant, gives alternating flanks at every interior zero, and the
 positive derivative seed gives the root flank. Consequently the
 literal cast chain satisfies `Sturm.IsSturmChain`; in particular `f`
 is squarefree. Its interval count is the variation difference of
-this literal chain, not a call to `sturmCount f`, and its total count
+this literal chain, not a call to `ZPoly.sturmCount f`, and its total count
 is the corresponding `−∞/+∞` difference. The proof factors through
 `Sturm.sturm_half_open` and `Sturm.sturm_line`. Constants are handled
 separately because the interval-count theorem requires positive
@@ -488,7 +488,7 @@ The certificate contains:
 
 These are generalized isolation records: they must not be presented
 as the current `RealRootIsolation P` / `RealRootIsolations P` types,
-whose fields are definitionally tied to the executable `sturmCount P`
+whose fields are definitionally tied to the executable `ZPoly.sturmCount P`
 and `sturmChain P`. Their semantic theorems parallel
 `RealRootIsolation.exists_unique_root` and
 `RealRootIsolations.isolates`, but consume the literal replay counts,

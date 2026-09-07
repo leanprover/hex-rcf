@@ -9,22 +9,22 @@ leanOptions = [
 [[require]]
 name = "HexRealRoots"
 git = "https://github.com/leanprover/hex-real-roots.git"
-rev = "5ea6914dc230e7519722d237b46e02ec6e5ff2d0"
+rev = "2db2ee65daa2cea203768628e0b88431df8faf31"
 
 [[require]]
 name = "HexRealRootsMathlib"
 git = "https://github.com/leanprover/hex-real-roots-mathlib.git"
-rev = "3634195024275435520c6b6d106f371f5c45df67"
+rev = "1725cd01de27ff69c016ea219177b23bf4e6ab00"
 
 [[require]]
 name = "HexPolyZ"
 git = "https://github.com/leanprover/hex-poly-z.git"
-rev = "385df1df6b2667aeb001b6b781f7109943de243b"
+rev = "1f22e9a8ae948501ab56e37a4cdb8153e60be9c9"
 
 [[require]]
 name = "HexPolyZMathlib"
 git = "https://github.com/leanprover/hex-poly-z-mathlib.git"
-rev = "db6441e818dd3a21e99bd7bf7a1b53291a140207"
+rev = "688a3dfb76e2fd18a63236b9c55df4f8f1956ea3"
 
 [[require]]
 name = "batteries"
@@ -39,7 +39,7 @@ rev = "v4.34.0-rc2"
 [[require]]
 name = "HexBasic"
 git = "https://github.com/leanprover/hex-basic.git"
-rev = "a47240943e925951a676d1a1c2f2a615ae68fdef"
+rev = "1a0fff2c8f545753b01cff0d941bf48f945cd299"
 
 [[lean_lib]]
 name = "HexRCF"
