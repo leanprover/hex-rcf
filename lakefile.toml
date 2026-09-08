@@ -9,22 +9,22 @@ leanOptions = [
 [[require]]
 name = "HexRealRoots"
 git = "https://github.com/leanprover/hex-real-roots.git"
-rev = "2db2ee65daa2cea203768628e0b88431df8faf31"
+rev = "v0.2.0"
 
 [[require]]
 name = "HexRealRootsMathlib"
 git = "https://github.com/leanprover/hex-real-roots-mathlib.git"
-rev = "1725cd01de27ff69c016ea219177b23bf4e6ab00"
+rev = "v0.2.0"
 
 [[require]]
 name = "HexPolyZ"
 git = "https://github.com/leanprover/hex-poly-z.git"
-rev = "1f22e9a8ae948501ab56e37a4cdb8153e60be9c9"
+rev = "v0.2.0"
 
 [[require]]
 name = "HexPolyZMathlib"
 git = "https://github.com/leanprover/hex-poly-z-mathlib.git"
-rev = "688a3dfb76e2fd18a63236b9c55df4f8f1956ea3"
+rev = "v0.2.0"
 
 [[require]]
 name = "batteries"
@@ -39,25 +39,11 @@ rev = "v4.34.0-rc2"
 [[require]]
 name = "HexBasic"
 git = "https://github.com/leanprover/hex-basic.git"
-rev = "1a0fff2c8f545753b01cff0d941bf48f945cd299"
+rev = "v0.2.0"
 
 [[lean_lib]]
 name = "HexRCF"
 
 [[lean_lib]]
 name = "HexRCFTests"
-globs = [
-  "HexRCF.LanguageTests",
-  "HexRCF.SturmBuilderTests",
-  "HexRCF.CarrierTests",
-  "HexRCF.IsolationsTests",
-  "HexRCF.SeparationTests",
-  "HexRCF.CellsTests",
-  "HexRCF.CommonRootTests",
-  "HexRCF.SignMatrixTests",
-  "HexRCF.BuilderTests",
-  "HexRCF.CertificateTests",
-  "HexRCF.DecisionTests",
-  "HexRCF.ReifyTests",
-  "HexRCF.LintTests",
-]
+globs = ["HexRCF.LanguageTests", "HexRCF.SturmBuilderTests", "HexRCF.CarrierTests", "HexRCF.IsolationsTests", "HexRCF.SeparationTests", "HexRCF.CellsTests", "HexRCF.CommonRootTests", "HexRCF.SignMatrixTests", "HexRCF.BuilderTests", "HexRCF.CertificateTests", "HexRCF.DecisionTests", "HexRCF.ReifyTests", "HexRCF.LintTests"]
