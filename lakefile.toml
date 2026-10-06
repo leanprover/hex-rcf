@@ -7,43 +7,43 @@ leanOptions = [
 ]
 
 [[require]]
-name = "HexRealRoots"
-git = "https://github.com/leanprover/hex-real-roots.git"
-rev = "v0.6.0"
-
-[[require]]
-name = "HexRealRootsMathlib"
-git = "https://github.com/leanprover/hex-real-roots-mathlib.git"
-rev = "v0.6.0"
+name = "HexBasic"
+git = "https://github.com/leanprover/hex-basic.git"
+rev = "v0.7.0"
 
 [[require]]
 name = "HexPolyZ"
 git = "https://github.com/leanprover/hex-poly-z.git"
-rev = "v0.6.0"
+rev = "v0.7.0"
 
 [[require]]
 name = "HexPolyZMathlib"
 git = "https://github.com/leanprover/hex-poly-z-mathlib.git"
-rev = "v0.6.0"
+rev = "v0.7.0"
 
 [[require]]
-name = "batteries"
-git = "https://github.com/leanprover-community/batteries"
-rev = "main"
+name = "HexRealRoots"
+git = "https://github.com/leanprover/hex-real-roots.git"
+rev = "v0.7.0"
+
+[[require]]
+name = "HexRealRootsMathlib"
+git = "https://github.com/leanprover/hex-real-roots-mathlib.git"
+rev = "v0.7.0"
+
+[[require]]
+name = "TauCeti"
+git = "https://github.com/TauCetiProject/TauCeti.git"
+rev = "0dbbe255a4f418084b30a3ffe6763d824a6b4250"
 
 [[require]]
 name = "mathlib"
 git = "https://github.com/leanprover-community/mathlib4.git"
-rev = "v4.34.0-rc2"
-
-[[require]]
-name = "HexBasic"
-git = "https://github.com/leanprover/hex-basic.git"
-rev = "v0.6.0"
+rev = "d870b9068518a0870842d15a0cd42637ec30b587"
 
 [[lean_lib]]
 name = "HexRCF"
 
 [[lean_lib]]
 name = "HexRCFTests"
-globs = ["HexRCF.LanguageTests", "HexRCF.SturmBuilderTests", "HexRCF.CarrierTests", "HexRCF.IsolationsTests", "HexRCF.SeparationTests", "HexRCF.CellsTests", "HexRCF.CommonRootTests", "HexRCF.SignMatrixTests", "HexRCF.BuilderTests", "HexRCF.CertificateTests", "HexRCF.DecisionTests", "HexRCF.ReifyTests", "HexRCF.LintTests"]
+globs = ["HexRCF.LanguageTests", "HexRCF.SturmBuilderTests", "HexRCF.CarrierTests", "HexRCF.IsolationsTests", "HexRCF.SeparationTests", "HexRCF.CellsTests", "HexRCF.CommonRootTests", "HexRCF.SignMatrixTests", "HexRCF.BuilderTests", "HexRCF.CertificateTests", "HexRCF.DecisionTests", "HexRCF.ReifyTests", "HexRCF.HandlerTests.Support", "HexRCF.HandlerTests.Async", "HexRCF.HandlerTests", "HexRCF.LintTests"]
