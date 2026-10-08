@@ -232,6 +232,21 @@ embeddings. The
 polynomials, selected conjugates, repeated owners, cancellation and a further
 root over the common coefficient field. Ordinary-kernel theorems cover
 provider-constructed non-prefix gathering and refusal of reordered and stale keys.
+`Gather.runFrom?` selects a validated catalog base automatically before native
+production. `gather_catalog` proves actual gathering and decision production
+from models of admissible catalog prefixes and compatible depth-zero owners;
+`runFrom?_original` preserves supplied owner-model values under explicit
+factory equations at the selected target realization; keys alone do not
+identify an independently registered model.
+For an ordered nonempty list of base-field values in a caller's actual
+`RealPrefix.Model`, installed as the only nonrational prefix,
+`Gather.run_registered_many` derives target selection and the identity-factory
+equations and preserves every original value at its source index.
+`Gather.run_registered` is its singleton case.
+The model carries provider interpretations and relative-transcendence/progress
+laws; a bounded `rcf_constant` registration alone does not construct it.
+[Catalog controls](../conformance/HexRCF/GatherCatalog.lean) include a false
+existential and refusal when no installed prefix admits every original key path.
 This is a producer API, not literal replay or source-goal quotation. The manual
 gives direct API examples. General frozen tower replay, source authentication
 for that backend and joint infinitesimal realization still require the owner
@@ -300,6 +315,20 @@ field, with ordinary kernel and producer-exclusion checks. This row interface
 requires a faithful parent model and authenticated source inputs; it is not
 complete root coverage, a generic tactic certificate or nested infinitesimal
 realization.
+
+`SelectedFormula.checkBytes` and `checkBytesWith` compose the owner's lexical
+byte decoder with this row check. Supplied original divisors are checked before
+parsing. The outer error preserves decoding and authentication failures,
+including version, root-binding and stored-sign failures; evidence rejection
+can occur in either layer. Replay errors and diagnostic false remain distinct.
+The limits bound lexical decoding only: compiled canonical arithmetic, or cached
+arithmetic on a fact miss, can run native production outside those limits.
+Decoding also depends on the value codec; the fixture uses the strict sign-fact
+codec and its kernel proofs use writer/parser laws without evaluating production.
+The fresh byte regression proves the same original real sentence through a
+checked writer binding and lexical-limit proof. This still requires a faithful
+parent model and source authentication. See the
+[byte evidence and scope](../reports/hexrcf-selected-root.md#byte-decoding-of-the-same-selected-row).
 
 The [adapter evidence record](../reports/hexrcf-adapter-evidence.md) maps the
 implemented interfaces to conformance, fresh proof examples and retained cost
